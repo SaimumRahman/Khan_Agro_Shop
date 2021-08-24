@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1097403663310",
+    "firebase_url": "https://khansolution-4a12d-default-rtdb.firebaseio.com",
+    "project_id": "khansolution-4a12d",
+    "storage_bucket": "khansolution-4a12d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097403663310:android:021d971a740add41c0219f",
+        "android_client_info": {
+          "package_name": "khan.solution"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097403663310-e8plpqnoimjn7gr2cprs3nujms3ahbhi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "khan.solution",
+            "certificate_hash": "bfab38807c5c9b9e7f3e81de4e92f27d2a6e7032"
+          }
+        },
+        {
+          "client_id": "1097403663310-4eso7dm9r3kfbdu2tn8d0fdin1msc82r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl6tLPMKjKR91reRr7A_sG_MA1TTtT0MI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097403663310-4eso7dm9r3kfbdu2tn8d0fdin1msc82r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

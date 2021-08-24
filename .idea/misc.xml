@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_foof_panel_bottom_navigation_activity.xml" value="0.18885869565217392" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_login_email_activity.xml" value="0.1852355072463768" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_login_phone_activity.xml" value="0.1852355072463768" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_phone_verify_activity.xml" value="0.25" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_register_activity.xml" value="0.33" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_send_otpactivity_activity.xml" value="0.18885869565217392" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/choose_user_type_activity.xml" value="0.17889492753623187" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/customer_login_email_activity.xml" value="0.1852355072463768" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/customer_login_phone_activity.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/customer_register_activity.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_login_email_activity.xml" value="0.1852355072463768" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_login_phone_activity.xml" value="0.1852355072463768" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_register_activity.xml" value="0.1852355072463768" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/sign_option_activity.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/verify_phone_cus_activity.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

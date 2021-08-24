@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="khan.solution">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KhanAgroShop">
+        <activity
+            android:name=".Activities.VerifyPhoneCus"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ChefSendOTPActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ChefForgetPassowordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ChefFoodPanel_BottomNavigation_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ChefPhoneVerifyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.DeliveryRegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.DeliveryLoginPhoneActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.DeliveryLoginEmailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.CustomerRegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.CustomerLoginPhoneActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.CustomerLoginEmailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ChefRegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ChefLoginPhoneActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ChefLoginEmailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ChooseUserTypeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.SignOptionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
