@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KhanAgroShop">
         <activity
+            android:name=".Activities.CustomerFoodPanel_BottomNavigation_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.OtpSendingLCus"
+            android:exported="true" />
+        <activity
             android:name=".Activities.VerifyPhoneCus"
             android:exported="true" />
         <activity

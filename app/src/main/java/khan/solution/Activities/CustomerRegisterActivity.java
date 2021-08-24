@@ -46,7 +46,7 @@ public class CustomerRegisterActivity extends AppCompatActivity {
                                 String userId= Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
                                 reference=FirebaseDatabase.getInstance().getReference("User").child(userId);
                                 final HashMap<String,Object> hashMap=new HashMap<>();
-                                hashMap.put("Customer",role);
+                                hashMap.put("Role",role);
                                 reference.updateChildren(hashMap).addOnCompleteListener(task1 -> {
 
                                     if (task1.isSuccessful()){

@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import khan.solution.R;
+import khan.solution.databinding.CustomerFoodPanelBottomNavigationActivityBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,10 +62,14 @@ public class MainActivity extends AppCompatActivity {
                                startActivity(new Intent(MainActivity.this,ChefFoodPanel_BottomNavigation_Activity.class));
                                finish();
                            }
-                           if (role.equals("customer")) {
-                               startActivity(new Intent(MainActivity.this, ChefFoodPanel_BottomNavigation_Activity.class));
+                           else if (role.equals("customer")) {
+                               startActivity(new Intent(MainActivity.this, CustomerFoodPanel_BottomNavigation_Activity.class));
                                finish();
 
+                           }
+                           else {
+//                               startActivity(new Intent(MainActivity.this,SignOptionActivity.class));
+//                               finish();
                            }
 
 

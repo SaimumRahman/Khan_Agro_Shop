@@ -35,5 +35,7 @@ public class ChefLoginPhoneActivity extends AppCompatActivity {
             startActivity(new Intent(ChefLoginPhoneActivity.this,ChefLoginEmailActivity.class));
             finish();
         });
+
+
     }
 }
