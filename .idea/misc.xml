@@ -3,23 +3,60 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/drawable/home.xml" value="0.2111111111111111" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/drawable/pendingOrder.xml" value="0.15" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/activity_admin_login.xml" value="0.21" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/admin_navigation_activity.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_food_panel_bottom_navigation_activity.xml" value="0.1" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_foof_panel_bottom_navigation_activity.xml" value="0.18885869565217392" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_fragment_home.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_fragment_pending_orders.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_login_email_activity.xml" value="0.1852355072463768" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_login_phone_activity.xml" value="0.1852355072463768" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_phone_verify_activity.xml" value="0.25" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_post_dish_activity.xml" value="0.2" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_register_activity.xml" value="0.33" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/chef_send_otpactivity_activity.xml" value="0.18885869565217392" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/choose_user_type_activity.xml" value="0.17889492753623187" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/customer_food_panel_bottom_navigation_activity.xml" value="0.2" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/customer_login_email_activity.xml" value="0.1852355072463768" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/customer_login_phone_activity.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/customer_menu_dishes.xml" value="0.1911231884057971" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/customer_register_activity.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_food_panel_bottom_navigation_activity.xml" value="0.1859375" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_forget_password_activity.xml" value="0.1859375" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_login_email_activity.xml" value="0.1852355072463768" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_login_phone_activity.xml" value="0.1852355072463768" />
-        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_register_activity.xml" value="0.1852355072463768" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/delivery_register_activity.xml" value="0.25" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_admin_home.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_admin_post_product.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_chef_orders.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_chef_profile.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_customer_cart.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_customer_home.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_customer_orders.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_customer_profile.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_customer_track.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_delivery_pending_order.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/fragment_delivery_shipppiiing.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/otp_sending_del_activity.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/otp_sending_lcus_activity.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/phone_register_activity.xml" value="0.19655797101449277" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/recyler_layout.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/register_activity.xml" value="0.14" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/sign_option_activity.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/splash_activity.xml" value="0.1716485507246377" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/verify_phone_cus_activity.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/layout/verify_phone_d_activity_.xml" value="0.1859375" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/menu/admin_menu.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/menu/chef_bottom_navigfation.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/menu/customer_bottom_navigation_bar.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/menu/delivery_bottom_navigation.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/menu/logout.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/menu/logout_cus.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgroShop/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18055555555555555" />
       </map>
     </option>
   </component>
