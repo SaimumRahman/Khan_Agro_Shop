@@ -101,10 +101,10 @@ public class AdminPostProduct extends Fragment {
 
 
 
-        if (TextUtils.isEmpty(binding.adminDishNameEdt.getText().toString())
-            && TextUtils.isEmpty(binding.adminPriceEdt.getText().toString())
-                && TextUtils.isEmpty(binding.adminDdescriptionEdt.getText().toString())
-                && TextUtils.isEmpty(binding.adminQuantityEdt.getText().toString())
+        if (TextUtils.isEmpty(binding.priceEdt.getText().toString())
+            && TextUtils.isEmpty(binding.detailsEdt.getText().toString())
+                && TextUtils.isEmpty(binding.quantityEdt.getText().toString())
+
         )
         {
             Toast.makeText(context,"Please fillup form",Toast.LENGTH_SHORT).show();
@@ -115,10 +115,10 @@ public class AdminPostProduct extends Fragment {
 
             final HashMap<String, Object> postHash = new HashMap<>();
             postHash.put("Post_Id", postId);
-            postHash.put("Dish_Name", binding.adminDishNameEdt.getText().toString());
-            postHash.put("Dish_Price", binding.adminPriceEdt.getText().toString());
-            postHash.put("Dish_Description", binding.adminDdescriptionEdt.getText().toString());
-            postHash.put("Dish_Quantity", binding.adminQuantityEdt.getText().toString());
+            postHash.put("Dish_Price", binding.priceEdt.getText().toString());
+            postHash.put("Dish_Description", binding.detailsEdt.getText().toString());
+            postHash.put("Dish_Quantity", binding.quantityEdt.getText().toString());
+
 
             postHash.put("Dish_Date", saveCurrentDateMs);
             postHash.put("Dish_Time", saveCurrentTimeMs);

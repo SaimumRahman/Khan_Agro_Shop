@@ -2,16 +2,15 @@ package khan.solution.Model;
 
 public class DishPost {
 
-    private String Dish_Date,Dish_Description,Dish_Image_Uri,Dish_Name,Dish_Price,Dish_Quantity,Dish_Time,Post_Id;
+    private String Dish_Date,Dish_Description,Dish_Image_Uri,Dish_Price,Dish_Quantity,Dish_Time,Post_Id;
 
     public DishPost() {
     }
 
-    public DishPost(String dish_Date, String dish_Description, String dish_Image_Uri, String dish_Name, String dish_Price, String dish_Quantity, String dish_Time, String post_Id) {
+    public DishPost(String dish_Date, String dish_Description, String dish_Image_Uri, String dish_Price, String dish_Quantity, String dish_Time, String post_Id) {
         Dish_Date = dish_Date;
         Dish_Description = dish_Description;
         Dish_Image_Uri = dish_Image_Uri;
-        Dish_Name = dish_Name;
         Dish_Price = dish_Price;
         Dish_Quantity = dish_Quantity;
         Dish_Time = dish_Time;
@@ -40,14 +39,6 @@ public class DishPost {
 
     public void setDish_Image_Uri(String dish_Image_Uri) {
         Dish_Image_Uri = dish_Image_Uri;
-    }
-
-    public String getDish_Name() {
-        return Dish_Name;
-    }
-
-    public void setDish_Name(String dish_Name) {
-        Dish_Name = dish_Name;
     }
 
     public String getDish_Price() {

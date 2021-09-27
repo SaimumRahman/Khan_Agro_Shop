@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 import khan.solution.R;
+import khan.solution.SplashActivity;
 import khan.solution.databinding.RegisterActivityBinding;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -102,7 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 HashMap<String,Object>user_has=new HashMap();
                 user_has.put("user_id",uid);
-                user_has.put("email",email);
+                user_has.put("user_details",email);
 
                 databaseReference.child(uid).updateChildren(user_has).addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
@@ -122,5 +123,20 @@ public class RegisterActivity extends AppCompatActivity {
 
         }).addOnFailureListener(e -> Toast.makeText(RegisterActivity.this,"Email Already Exists",Toast.LENGTH_SHORT).show());
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        if (user!=null){
+            Toast.makeText(RegisterActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(RegisterActivity.this,CustomerNavigationActivity.class));
+        }
+        else {
+
+            Toast.makeText(RegisterActivity.this, "Please register", Toast.LENGTH_SHORT).show();
+        }
     }
 }

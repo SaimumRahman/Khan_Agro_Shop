@@ -1,0 +1,108 @@
+package khan.solution.Fragments;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import khan.solution.Adapter.AdapterCustomerCart;
+import khan.solution.Adapter.AdapterCustomerHome;
+import khan.solution.Model.Cart;
+import khan.solution.Model.DishPost;
+import khan.solution.databinding.FragmentCustomerCartBinding;
+import khan.solution.databinding.FragmentCustomerHomeBinding;
+
+public class CustomerCartFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
+
+    private FragmentCustomerCartBinding binding;
+    private List<Cart> cartList;
+    private AdapterCustomerCart adapterCustomerCart;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding=FragmentCustomerCartBinding.inflate(getLayoutInflater());
+        getActivity().setTitle("Home");
+
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        databaseReference=firebaseDatabase.getReference("Cart");
+
+        binding.customercartrecycler.setHasFixedSize(true);
+        binding.customercartrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        cartList=new ArrayList<>();
+        binding.customerCartswipe.setOnRefreshListener(this);
+
+
+        binding.customerCartswipe.post(new Runnable() {
+            @Override
+            public void run() {
+                binding.customerCartswipe.setRefreshing(false);
+                customermenu();
+            }
+        });
+
+
+        return binding.getRoot();
+    }
+
+    @Nullable
+    @Override
+    public void onRefresh() {
+        customermenu();
+    }
+    private void customermenu() {
+
+        binding.customerCartswipe.setRefreshing(false);
+        cartList.clear();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+
+                    for (DataSnapshot snapshot1:snapshot.getChildren()){
+                        for (DataSnapshot snapshot2:snapshot1.getChildren()){
+                            Cart cart=snapshot2.getValue(Cart.class);
+                            cartList.add(cart);
+                        }
+//                        Cart cart=snapshot1.getValue(Cart.class);
+//                        cartList.add(cart);
+                    }
+                    adapterCustomerCart = new AdapterCustomerCart(getContext(), cartList);
+                    binding.customercartrecycler.setAdapter(adapterCustomerCart);
+
+                    binding.customerCartswipe.setRefreshing(false);
+
+                }
+                else {
+                  //  Toast.makeText(co,"No Data Exists",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                binding.customerCartswipe.setRefreshing(false);
+            }
+        });
+
+    }
+}

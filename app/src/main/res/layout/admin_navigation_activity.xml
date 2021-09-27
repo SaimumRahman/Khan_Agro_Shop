@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.AdminNavigationActivity"
-    android:background="@drawable/admin_bottom"
+    android:background="@drawable/homenavigationback"
     >
 
     <FrameLayout

@@ -38,10 +38,9 @@ public class AdapterAdminHome extends RecyclerView.Adapter<AdapterAdminHome.View
 
         DishPost dishPost=dishPostList.get(position);
         Glide.with(context).load(dishPost.getDish_Image_Uri()).into(holder.binding.imageViewRecycler);
-        holder.binding.dishnametvre.setText(dishPost.getDish_Name());
-        holder.binding.dishpricetv.setText(dishPost.getDish_Price());
-        holder.binding.dishdescriptiontvre.setText(dishPost.getDish_Description());
-        holder.binding.dishquantitytvre.setText(dishPost.getDish_Quantity());
+        holder.binding.priceTv.setText(dishPost.getDish_Price());
+        holder.binding.detailsTvs.setText(dishPost.getDish_Description());
+        holder.binding.quantityTv.setText(dishPost.getDish_Quantity());
 
     }
 

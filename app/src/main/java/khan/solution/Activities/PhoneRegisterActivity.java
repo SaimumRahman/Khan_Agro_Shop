@@ -201,7 +201,7 @@ public class PhoneRegisterActivity extends AppCompatActivity {
                 String uid=auth.getCurrentUser().getUid();
 
                 HashMap<String,Object>user_Phone_Hash=new HashMap<>();
-                user_Phone_Hash.put("phone",phoneNumber);
+                user_Phone_Hash.put("user_details",phoneNumber);
                 user_Phone_Hash.put("user_id",uid);
 
                 databaseReference.child(uid).updateChildren(user_Phone_Hash).addOnCompleteListener(new OnCompleteListener<Void>() {
