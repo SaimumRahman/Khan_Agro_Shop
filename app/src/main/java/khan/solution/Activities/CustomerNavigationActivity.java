@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import khan.solution.Fragments.CustomerCartFragment;
 import khan.solution.Fragments.CustomerChickenFragment;
+import khan.solution.Fragments.CustomerLogout;
 import khan.solution.Fragments.CustomerMuttonFragment;
 import khan.solution.R;
 import khan.solution.databinding.ActivityCustomerNavigationBinding;
@@ -34,14 +35,22 @@ public class CustomerNavigationActivity extends AppCompatActivity
             Fragment fragment=null;
 
             switch (item.getItemId()){
+
                 case R.id.chicken_customer:
                     fragment=new CustomerChickenFragment();
                     break;
+
                 case R.id.mutton_customer:
                     fragment=new CustomerMuttonFragment();
                     break;
+
                 case R.id.cart_customer:
                     fragment=new CustomerCartFragment();
+                    break;
+
+//                case R.id.logout_customer:
+//                    fragment=new CustomerLogout();
+//                    break;
 
             }
             return loadFragment(fragment);

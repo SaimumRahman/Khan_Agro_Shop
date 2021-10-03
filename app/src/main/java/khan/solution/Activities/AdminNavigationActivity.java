@@ -10,9 +10,11 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import khan.solution.Fragments.AdminChickenFragment;
+import khan.solution.Fragments.AdminLogoutFragment;
 import khan.solution.Fragments.AdminMuttonFragment;
 import khan.solution.Fragments.AdminOrderFragment;
 import khan.solution.Fragments.AdminPostProduct;
+import khan.solution.Fragments.CustomerLogout;
 import khan.solution.R;
 import khan.solution.databinding.AdminNavigationActivityBinding;
 
@@ -53,6 +55,9 @@ public class AdminNavigationActivity extends AppCompatActivity
 
             case R.id.post_dish_admin:
                 fragment=new AdminPostProduct(AdminNavigationActivity.this);
+                break;
+            case R.id.logout_admin:
+                fragment=new AdminLogoutFragment();
                 break;
 
         }

@@ -74,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
             startActivity(new Intent(RegisterActivity.this, PhoneRegisterActivity.class));
             finish();
         });
+
     }
 
     @Override
@@ -108,6 +109,8 @@ public class RegisterActivity extends AppCompatActivity {
                 databaseReference.child(uid).updateChildren(user_has).addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
                         Toast.makeText(RegisterActivity.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RegisterActivity.this,CustomerNavigationActivity.class));
+                        finish();
                     }
                     else {
                         Toast.makeText(RegisterActivity.this,"Email Already Exists",Toast.LENGTH_SHORT).show();

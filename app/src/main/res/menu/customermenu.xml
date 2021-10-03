@@ -17,7 +17,7 @@
         android:title="Mutton"
         android:icon="@drawable/accounts"/>
 
-    <item android:id="@+id/logout_admin"
-        android:title="Logout"
-        android:icon="@drawable/logout_admin"/>
+<!--    <item android:id="@+id/logout_customer"-->
+<!--        android:title="Logout"-->
+<!--        android:icon="@drawable/logout_admin"/>-->
 </menu>
