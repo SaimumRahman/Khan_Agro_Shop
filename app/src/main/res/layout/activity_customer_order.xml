@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CustomerOrderActivity"
+    android:background="@drawable/orderback"
+    >
+
+
+    <TextView
+        android:id="@+id/totalpricecustomer2"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="165dp"
+        android:background="@drawable/amount"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#D4E61F"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
+
+    <EditText
+        android:id="@+id/NameEdtOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/name"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#D4E61F"
+        android:textColorHint="#D4E61F"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalpricecustomer2" />
+
+    <EditText
+        android:background="@drawable/name"
+        android:textColor="#D4E61F"
+        android:textColorHint="#D4E61F"
+        android:id="@+id/emailEdtOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textWebEmailAddress|text"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameEdtOrder" />
+
+    <EditText
+        android:background="@drawable/name"
+        android:textColor="#D4E61F"
+        android:textColorHint="#D4E61F"
+        android:id="@+id/phoneEdtOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="Phone"
+        android:inputType="textWebEmailAddress|text"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailEdtOrder" />
+
+    <EditText
+        android:background="@drawable/name"
+        android:textColor="#D4E61F"
+        android:textColorHint="#D4E61F"
+        android:textAlignment="center"
+        android:id="@+id/edtAddressOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="Address in Details"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneEdtOrder" />
+
+    <ImageView
+        android:id="@+id/paybillbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="173dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAddressOrder"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/paysbtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

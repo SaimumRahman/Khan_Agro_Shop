@@ -130,12 +130,12 @@ public class RegisterActivity extends AppCompatActivity {
         super.onStart();
 
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+
         if (user!=null){
             Toast.makeText(RegisterActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(RegisterActivity.this,CustomerNavigationActivity.class));
         }
         else {
-
             Toast.makeText(RegisterActivity.this, "Please register", Toast.LENGTH_SHORT).show();
         }
     }

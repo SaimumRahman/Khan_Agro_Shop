@@ -1,60 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.AdminLoginActivity"
-        android:background="@drawable/loginbackgroundthree"
+        android:background="@drawable/loginbackfinal"
+    >
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/loginbacklinear"
+    android:id="@+id/r1"
+    android:gravity="center"
+    android:layout_centerInParent="true"
     >
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/adminUserNameEdt"
-        android:layout_width="222dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="380dp"
-        android:layout_marginEnd="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/edittextall"
         android:hint="User Name"
+        android:layout_marginBottom="10dp"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="#E10C0C"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.344"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="20sp" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/adminpasswordEdt"
-        android:layout_width="213dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/adminUserNameEdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/edittextall"
         android:hint="Passoword"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="#C31313"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminUserNameEdt" />
+        />
+
+
+</RelativeLayout>
+
 
     <ImageView
         android:id="@+id/adminLoginBtn"
-        android:layout_width="159dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminpasswordEdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/r1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         app:srcCompat="@drawable/loginbutton" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/home_customer"
-        android:title="Home"
-        android:icon="@drawable/home"/>
+    <item android:id="@+id/chicken_customer"
+        android:title="Chicken"
+        android:icon="@drawable/hen"/>
+
+    <item android:id="@+id/mutton_customer"
+        android:title="Mutton"
+        android:icon="@drawable/goat"/>
 
     <item android:id="@+id/cart_customer"
-        android:title="Post Dish"
+        android:title="Cart"
         android:icon="@drawable/ic_baseline_add_shopping_cart_24"/>
 
-    <item android:id="@+id/Profile"
-        android:title="Orders"
+    <item android:id="@+id/mutton_menu"
+        android:title="Mutton"
         android:icon="@drawable/accounts"/>
 
     <item android:id="@+id/logout_admin"

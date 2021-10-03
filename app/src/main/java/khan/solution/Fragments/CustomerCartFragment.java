@@ -1,6 +1,8 @@
 package khan.solution.Fragments;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import khan.solution.Activities.CustomerOrderActivity;
 import khan.solution.Adapter.AdapterCustomerCart;
 import khan.solution.Adapter.AdapterCustomerHome;
 import khan.solution.Model.Cart;
@@ -51,6 +54,9 @@ public class CustomerCartFragment extends Fragment implements SwipeRefreshLayout
         cartList=new ArrayList<>();
         binding.customerCartswipe.setOnRefreshListener(this);
 
+        binding.customerOrderss.setOnClickListener(v ->{
+            startActivity(new Intent(getContext(),CustomerOrderActivity.class));
+        });
 
         binding.customerCartswipe.post(new Runnable() {
             @Override
@@ -60,19 +66,30 @@ public class CustomerCartFragment extends Fragment implements SwipeRefreshLayout
             }
         });
 
-
         return binding.getRoot();
     }
+
+//    @Override
+//    public void onAttach(@NonNull Context context) {
+//        super.onAttach(context);
+//
+//        binding.customerOrderss.setOnClickListener(v ->{
+//            startActivity(new Intent(context, CustomerOrderActivity.class));
+//        });
+//
+//    }
 
     @Nullable
     @Override
     public void onRefresh() {
         customermenu();
     }
+
     private void customermenu() {
 
         binding.customerCartswipe.setRefreshing(false);
         cartList.clear();
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override

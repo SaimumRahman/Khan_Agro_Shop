@@ -4,9 +4,12 @@
     >
 
 
-    <item android:id="@+id/home_admin"
+    <item android:id="@+id/chicken_admin"
     android:title="Home"
-    android:icon="@drawable/home"/>
+    android:icon="@drawable/hen"/>
+    <item android:id="@+id/mutton_admin"
+    android:title="Home"
+    android:icon="@drawable/goat"/>
 
     <item android:id="@+id/post_dish_admin"
     android:title="Post Dish"

@@ -1,83 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/backrecy"
-    android:layout_margin="20dp"
-    >
 
+    android:layout_margin="15dp"
+    android:orientation="horizontal"
+    >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    android:layout_marginLeft="30dp"
+    android:layout_gravity="center"
+    >
 
     <ImageView
         android:id="@+id/imageViewRecycler"
-        android:layout_width="143dp"
-        android:layout_height="127dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="21dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/imaggebutton" />
-
-    <TextView
-        android:id="@+id/priceTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="70dp"
-        android:background="@drawable/price"
-        android:textColor="#DD0A0A"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewRecycler"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/detailsTvs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="70dp"
-        android:background="@drawable/details"
-        android:textColor="#DD0A0A"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageViewRecycler"
-        app:layout_constraintTop_toBottomOf="@+id/priceTv" />
-
-    <TextView
-        android:id="@+id/quantityTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/quantity"
-        android:textColor="#DD0A0A"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageViewRecycler"
-        app:layout_constraintTop_toBottomOf="@+id/detailsTvs" />
-
+        android:layout_width="141dp"
+        android:layout_height="114dp"
+       />
     <ImageView
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="15dp"
         android:background="@drawable/orderbtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/quantityTv"
+        android:layout_gravity="center"
+       />
+</LinearLayout>
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewRecycler" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        >
+
+        <TextView
+            android:id="@+id/priceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#CF9D08"
+            android:textAlignment="center"
+            android:text="200 RS"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+
+          />
+
+        <TextView
+            android:id="@+id/detailsTvs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#CF9D08"
+            android:textAlignment="center"
+            android:text="Chicken Wings"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+    />
+
+        <TextView
+            android:id="@+id/quantityTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#CF9D08"
+            android:textAlignment="center"
+            android:text="200 Kg Available"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

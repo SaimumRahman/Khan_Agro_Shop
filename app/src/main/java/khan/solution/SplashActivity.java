@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import khan.solution.Activities.AdminLoginActivity;
+import khan.solution.Activities.AdminNavigationActivity;
 import khan.solution.Activities.LoginActivity;
 import khan.solution.Activities.RegisterActivity;
 import khan.solution.Model.Customer;
@@ -35,18 +36,28 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=SplashActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         auth=FirebaseAuth.getInstance();
+
+
+            binding.adminTv.setOnClickListener(v ->{
+                startActivity(new Intent(SplashActivity.this, AdminLoginActivity.class));
+                finish();
+            });
+
+
+
+
 
         new Handler().postDelayed(new Runnable() {
 
         @Override
 
             public void run() {
-            startActivity(new Intent(SplashActivity.this,RegisterActivity.class));
-            finish();
-        }
 
+
+              startActivity(new Intent(SplashActivity.this,RegisterActivity.class));
+              finish();
+        }
 
 
         }, 5*1000); // wait for 5 seconds

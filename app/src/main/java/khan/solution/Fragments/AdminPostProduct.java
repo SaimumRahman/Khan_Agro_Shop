@@ -72,7 +72,8 @@ public class AdminPostProduct extends Fragment {
         context=getContext().getApplicationContext();
 
         firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference("Dish_Post");
+
+
         storageReference=FirebaseStorage.getInstance().getReference("Dish_Image");
 
         firebaseAuth=FirebaseAuth.getInstance();
@@ -86,7 +87,20 @@ public class AdminPostProduct extends Fragment {
         saveCurrentTimeMs = currentTime.format(callForDate.getTime());
 
         binding.imageButton.setOnClickListener(v  ->{
-            onSelectImageClick(v);
+
+            if (binding.chickenCheck.isChecked()){
+                databaseReference=firebaseDatabase.getReference("Dish_Post").child("Chicken");
+                onSelectImageClick(v);
+            }
+            else if (binding.muttonCheck.isChecked())
+            {
+                databaseReference=firebaseDatabase.getReference("Dish_Post").child("Mutton");
+                onSelectImageClick(v);
+            }
+            else {
+                Toast.makeText(getContext(), "Please check one box", Toast.LENGTH_SHORT).show();
+            }
+
         });
         binding.adminSubmitBtn.setOnClickListener(v ->{
             upload();

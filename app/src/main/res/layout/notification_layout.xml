@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/not"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/ll1"
+    >
+    <TextView
+        android:id="@+id/nameordernot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#CF9D08"
+        android:textAlignment="center"
+        android:text="Name"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        tools:ignore="RtlCompat" />
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/emailOrdernot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#CF9D08"
+        android:textAlignment="center"
+        android:text="Email"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/ll1"
+        android:id="@+id/ll2"
+        >
+        <TextView
+            android:id="@+id/phnordernot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#CF9D08"
+            android:textAlignment="center"
+            android:text="Phone"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/addressOrdernot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#CF9D08"
+            android:textAlignment="center"
+            android:text="Address"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll2"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/pricetotalOrdernot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Price"
+            android:textAlignment="center"
+            android:textColor="#CF9D08"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

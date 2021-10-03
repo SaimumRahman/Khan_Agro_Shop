@@ -1,40 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.RegisterActivity"
-    android:background="@drawable/loginbackgroundthree"
+    android:background="@drawable/loginbackfinal"
     android:id="@+id/scroll"
 
     >
 
-    <ImageButton
-        android:id="@+id/googleRegBtn"
-        android:layout_width="56dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="392dp"
-        android:layout_marginEnd="100dp"
-        android:background="@drawable/search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/r1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/loginbacklinear"
+        android:gravity="center">
 
-    <ImageButton
-        android:id="@+id/phoneRegBtn"
-        android:layout_width="57dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:background="@drawable/phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/googleRegBtn"
-        app:layout_constraintVertical_bias="0.103" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/googleRegBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/search" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:textColor="#B18708"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/phoneRegBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/phone" />
+    </LinearLayout>
+
+</RelativeLayout>
 

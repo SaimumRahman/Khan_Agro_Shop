@@ -6,104 +6,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.PhoneRegisterActivity"
-    android:background="@drawable/phnregback"
+    android:background="@drawable/backphnreg"
     >
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    >
+<ImageView
+    android:layout_margin="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/topreg"
+    android:id="@+id/im1"
+    android:layout_centerHorizontal="true"
+    />
     <com.hbb20.CountryCodePicker
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
         android:id="@+id/countryCodePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="192dp"
-        android:layout_marginEnd="130dp"
-        app:ccpDialog_textColor="#B80909"
+        app:ccpDialog_textColor="#D3E610"
         app:ccp_textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:layout_below="@+id/im1"
+      />
     <EditText
-        android:id="@+id/verifyCodeEdt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="100dp"
-        android:background="@drawable/edittextall"
-        android:hint="VerificationCodeEdt"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitBtn" />
-
-    <EditText
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
         android:id="@+id/phoneNumberEdt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
         android:background="@drawable/edittextall"
         android:hint="Enter Phone Number"
         android:inputType="phone"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countryCodePicker" />
+        android:layout_below="@+id/countryCodePicker"
+        />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:layout_margin="10dp"
         android:id="@+id/submitBtn"
         android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
         android:background="@drawable/buttonallfinal"
         android:text="Submit Number"
         android:textAlignment="center"
         android:textColor="#D60B0B"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumberEdt" />
+        android:layout_below="@+id/phoneNumberEdt"
+        />
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomreg"
+        android:id="@+id/im2"
+        android:layout_below="@+id/submitBtn"
+        />
+
+    <EditText
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/verifyCodeEdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittextall"
+        android:hint="VerificationCodeEdt"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="#D3E610"
+        android:layout_below="@+id/im2"
+      />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
         android:id="@+id/verifyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="100dp"
         android:background="@drawable/buttonallfinal"
         android:text="Verify Code"
         android:textAlignment="center"
         android:textColor="#D60B0B"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verifyCodeEdt" />
-
+        android:layout_below="@+id/verifyCodeEdt"
+      />
     <TextView
         android:id="@+id/resendCodeTv"
         android:layout_width="wrap_content"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="100dp"
         android:text="Resend Code"
         android:textAlignment="center"
+        android:layout_centerHorizontal="true"
         android:textColor="#BA0101"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verifyBtn" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@+id/verifyBtn"
+ />
+</RelativeLayout>
 
 
 </ScrollView>

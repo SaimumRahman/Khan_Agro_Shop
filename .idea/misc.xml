@@ -7,15 +7,19 @@
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/drawable/order_admin.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/drawable/post_dish.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/activity_admin_login.xml" value="0.192481884057971" />
-        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/activity_customer_navigation.xml" value="0.11911231884057971" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/activity_customer_navigation.xml" value="0.18" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/activity_customer_order.xml" value="0.21" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/admin_navigation_activity.xml" value="0.192481884057971" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/fragment_admin_home.xml" value="0.125" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/fragment_admin_post_product.xml" value="0.25" />
-        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/fragment_customer_cart.xml" value="0.15896739130434784" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/fragment_customer_cart.xml" value="0.18" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/fragment_customer_home.xml" value="0.11548913043478261" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/fragment_order_admin.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/login_activity.xml" value="0.22" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/notification_layout.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/order_fragment_cutomer.xml" value="0.15942028985507245" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/phone_register_activity.xml" value="0.25" />
-        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/recyler_layout.xml" value="0.2" />
+        <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/recyler_layout.xml" value="0.33" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/register_activity.xml" value="0.2" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/layout/splash_activity.xml" value="0.16802536231884058" />
         <entry key="..\:/Users/saimu/AndroidStudioProjects/KhanAgriBusinessShop/app/src/main/res/menu/admin_menu.xml" value="0.2" />
