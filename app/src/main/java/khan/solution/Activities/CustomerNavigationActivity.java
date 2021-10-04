@@ -48,9 +48,9 @@ public class CustomerNavigationActivity extends AppCompatActivity
                     fragment=new CustomerCartFragment();
                     break;
 
-//                case R.id.logout_customer:
-//                    fragment=new CustomerLogout();
-//                    break;
+                case R.id.logout_customer:
+                    fragment=new CustomerLogout();
+                    break;
 
             }
             return loadFragment(fragment);

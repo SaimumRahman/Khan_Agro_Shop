@@ -24,8 +24,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+import io.paperdb.Paper;
 import khan.solution.Fragments.CustomerCartFragment;
 import khan.solution.Model.DishPost;
+import khan.solution.Model.Prevelent;
 import khan.solution.R;
 import khan.solution.databinding.RecylerLayoutBinding;
 
@@ -96,8 +98,8 @@ public class AdapterCustomerHome extends RecyclerView.Adapter<AdapterCustomerHom
 
     private void saveData(DishPost dishPost) {
 
-        final FirebaseAuth auth=FirebaseAuth.getInstance();
-        String user = auth.getCurrentUser().getUid();
+        Paper.init(context);
+        String user = Paper.book().read(Prevelent.userid);
         String uniqueId = UUID.randomUUID().toString();
         final FirebaseDatabase database=FirebaseDatabase.getInstance();
         final DatabaseReference databaseReference=database.getReference("Cart");
@@ -108,6 +110,7 @@ public class AdapterCustomerHome extends RecyclerView.Adapter<AdapterCustomerHom
         cartHash.put("Quantity", dishPost.getDish_Quantity());
         cartHash.put("Image_Uri",dishPost.getDish_Image_Uri());
         cartHash.put("cart_id",uniqueId);
+        cartHash.put("Dish_Post_Id",dishPost.getPost_Id());
 
         databaseReference.child(user).child(uniqueId).updateChildren(cartHash).addOnCompleteListener(task -> {
             Toast.makeText(context, "Added To CART", Toast.LENGTH_SHORT).show();

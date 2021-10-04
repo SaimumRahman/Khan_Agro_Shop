@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -209,6 +210,7 @@ public class PhoneRegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                       if (task.isSuccessful()){
                           Toast.makeText(PhoneRegisterActivity.this,"Registered",Toast.LENGTH_SHORT).show();
+                          startActivity(new Intent(PhoneRegisterActivity.this,LoginActivity.class));
                       }
                       else {
                           Toast.makeText(PhoneRegisterActivity.this,"Not Registered",Toast.LENGTH_SHORT).show();

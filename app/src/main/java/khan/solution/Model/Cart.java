@@ -13,7 +13,10 @@ public class Cart {
         Quantity = quantity;
         Image_Uri = image_Uri;
         this.cart_id = cart_id;
+
     }
+
+
 
     public String getPrice() {
         return Price;

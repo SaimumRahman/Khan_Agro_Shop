@@ -109,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                 databaseReference.child(uid).updateChildren(user_has).addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
                         Toast.makeText(RegisterActivity.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this,CustomerNavigationActivity.class));
+                        startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
                         finish();
                     }
                     else {
@@ -128,18 +128,18 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-
-        if (user!=null){
-            Toast.makeText(RegisterActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(RegisterActivity.this,CustomerNavigationActivity.class));
-        }
-        else {
-            Toast.makeText(RegisterActivity.this, "Please register", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+//
+//        if (user!=null){
+//            //Toast.makeText(RegisterActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+//        }
+//        else {
+//            Toast.makeText(RegisterActivity.this, "Please register", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }

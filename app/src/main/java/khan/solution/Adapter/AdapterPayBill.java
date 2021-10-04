@@ -1,6 +1,7 @@
 package khan.solution.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -10,11 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
+import khan.solution.Activities.AdminOrderDetailsActivity;
 import khan.solution.Model.Cart;
 import khan.solution.Model.PayBill;
 import khan.solution.MyFirebaseInstanceIDService;
@@ -49,6 +54,10 @@ public class AdapterPayBill extends RecyclerView.Adapter<AdapterPayBill.ViewHold
         holder.binding.addressOrdernot.setText(payBill.getAddress());
         holder.binding.pricetotalOrdernot.setText(payBill.getTotal_Bill());
 
+        holder.itemView.setOnClickListener(v ->{
+            Intent intent=new Intent(context, AdminOrderDetailsActivity.class);
+            context.startActivity(intent);
+        });
 
     }
 

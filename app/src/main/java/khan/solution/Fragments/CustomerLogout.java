@@ -25,9 +25,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.paperdb.Paper;
 import khan.solution.Activities.LoginActivity;
 import khan.solution.Adapter.AdapterAdminHome;
 import khan.solution.Model.DishPost;
+import khan.solution.Model.Prevelent;
 import khan.solution.SplashActivity;
 import khan.solution.databinding.FragmentAdminHomeBinding;
 import khan.solution.databinding.FragmentLogoutBinding;
@@ -43,12 +45,13 @@ public class CustomerLogout extends Fragment {
 
         binding=FragmentLogoutBinding.inflate(getLayoutInflater());
         getActivity().setTitle("LogOut");
-
-     //  final FirebaseAuth auth=FirebaseAuth.getInstance();
+        Paper.init(getContext());
+    // final FirebaseAuth auth=FirebaseAuth.getInstance();
 
         binding.logoutbtn.setOnClickListener(v ->{
 
-
+            Paper.book().delete(Prevelent.userdetailskey);
+            startActivity(new Intent(getContext(),LoginActivity.class));
 
         });
 

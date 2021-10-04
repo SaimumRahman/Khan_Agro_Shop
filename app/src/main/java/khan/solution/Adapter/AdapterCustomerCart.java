@@ -53,6 +53,7 @@ public class AdapterCustomerCart extends RecyclerView.Adapter<AdapterCustomerCar
             String user=auth.getCurrentUser().getUid();
             final FirebaseDatabase database=FirebaseDatabase.getInstance();
             final DatabaseReference databaseReference=database.getReference("Cart");
+
             databaseReference.child(user).child(cart.getCart_id()).removeValue().
                     addOnCompleteListener(task ->
                             Toast.makeText(context, "Product removed", Toast.LENGTH_SHORT).show());
