@@ -84,7 +84,7 @@ public class AdminChickenFragment extends Fragment implements SwipeRefreshLayout
 
 
                     }
-                    adapterAdminHome = new AdapterAdminHome(getContext(), dishPostArrayList);
+                    adapterAdminHome = new AdapterAdminHome(getContext(), dishPostArrayList,"chicken");
                     binding.adminHomeRecycler.setAdapter(adapterAdminHome);
 
                     binding.adminhomeswipe.setRefreshing(false);

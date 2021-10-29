@@ -1,8 +1,11 @@
 package khan.solution.Model;
 
+import com.google.firebase.auth.FirebaseUser;
+
 public class Customer {
 
-    private String user_details,user_id;
+    private String user_details;
+    private String user_id;
 
     public Customer() {
     }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.EditActivity">
+
+
+    <ImageView
+        android:layout_margin="20dp"
+        android:id="@+id/imageButton"
+        android:layout_width="182dp"
+        android:layout_height="134dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/imaggebutton"
+        android:scaleType="centerInside" />
+    <EditText
+        android:id="@+id/priceEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/price"
+        android:textAlignment="center"
+        android:textColor="#A19107"
+        android:textSize="20sp"
+        android:hint="Price"
+        />
+
+
+    <EditText
+        android:hint="Details"
+        android:id="@+id/detailsEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/priceEdt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/price"
+        android:textAlignment="center"
+        android:textColor="#A19107"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:hint="Quantity"
+        android:layout_below="@+id/detailsEdt"
+        android:id="@+id/quantityEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/price"
+        android:textAlignment="center"
+        android:textColor="#A19107"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/admin_submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quantityEdt"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/buttonallgetall" />
+
+</RelativeLayout>

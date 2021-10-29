@@ -23,11 +23,35 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ORDER"
-        android:layout_gravity="center"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/customerOrderss"
-        />
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/buttonorange"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="128dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="5dp"
+            android:text="Confirm Order"
+            android:textAlignment="center"
+            android:textColor="#D8CFCD"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

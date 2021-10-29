@@ -90,7 +90,7 @@ public class AdminOrderFragment extends Fragment implements SwipeRefreshLayout.O
 
                 }
                 else {
-                    Toast.makeText(getContext(),"No Data Exists",Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getActivity(),"No Data Exists",Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -2,13 +2,15 @@ package khan.solution.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -19,16 +21,20 @@ public class AdapterAdminHome extends RecyclerView.Adapter<AdapterAdminHome.View
 
     private Context context;
     private List<DishPost>dishPostList;
+    private String item;
 
-    public AdapterAdminHome(Context context, List<DishPost> dishPostList) {
+    public AdapterAdminHome(Context context, List<DishPost> dishPostList, String item) {
         this.context = context;
         this.dishPostList = dishPostList;
+        this.item=item;
     }
 
     @NonNull
     @Override
     public AdapterAdminHome.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        RecylerLayoutBinding binding=RecylerLayoutBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
+
+        RecylerLayoutBinding binding=RecylerLayoutBinding.
+                inflate(LayoutInflater.from(parent.getContext()),parent,false);
 
         return new ViewHolder(binding);
     }
@@ -41,6 +47,34 @@ public class AdapterAdminHome extends RecyclerView.Adapter<AdapterAdminHome.View
         holder.binding.priceTv.setText(dishPost.getDish_Price());
         holder.binding.detailsTvs.setText(dishPost.getDish_Description());
         holder.binding.quantityTv.setText(dishPost.getDish_Quantity());
+
+        holder.itemView.setOnClickListener(v ->{
+
+            final FirebaseDatabase database=FirebaseDatabase.getInstance();
+            final DatabaseReference ref;
+
+            if (item.equals("chicken")){
+
+                ref = database.getReference("Dish_Post").child("Chicken");
+                ref.child(dishPost.getPost_Id()).removeValue();
+                Toast.makeText(context, "Item Deleted", Toast.LENGTH_SHORT).show();
+            }
+            else {
+
+                ref = database.getReference("Dish_Post").child("Mutton");
+                ref.child(dishPost.getPost_Id()).removeValue();
+                Toast.makeText(context, "Item Deleted", Toast.LENGTH_SHORT).show();
+            }
+
+
+//            Intent intent=new Intent(context,EditActivity.class);
+//            intent.putExtra("image",dishPost.getDish_Image_Uri());
+//            intent.putExtra("price",dishPost.getDish_Price());
+//            intent.putExtra("details",dishPost.getDish_Description());
+//            intent.putExtra("quantity",dishPost.getDish_Quantity());
+//            context.startActivity(intent);
+
+        });
 
     }
 

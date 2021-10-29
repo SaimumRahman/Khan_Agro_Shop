@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homenavigationback"
+    android:background="@drawable/backnav"
     tools:context=".Activities.CustomerNavigationActivity">
 
 
@@ -20,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?android:attr/windowBackground"
-        android:backgroundTint="@color/black"
+        android:background="#F84B3F"
+        android:backgroundTint="#F1D909"
         app:menu="@menu/customermenu" />
 
 </RelativeLayout>

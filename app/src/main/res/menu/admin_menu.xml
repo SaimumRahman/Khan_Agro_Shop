@@ -5,10 +5,10 @@
 
 
     <item android:id="@+id/chicken_admin"
-    android:title="Home"
+    android:title="Chicken"
     android:icon="@drawable/hen"/>
     <item android:id="@+id/mutton_admin"
-    android:title="Home"
+    android:title="Mutton"
     android:icon="@drawable/goat"/>
 
     <item android:id="@+id/post_dish_admin"
@@ -19,8 +19,10 @@
     android:title="Orders"
     android:icon="@drawable/order_admin"/>
 
-    <item android:id="@+id/logout_admin"
-    android:title="Logout"
-    android:icon="@drawable/logout_admin"/>
+    <item android:id="@+id/shippingorder"
+    android:title="Shipping Order"
+    android:icon="@drawable/ship"/>
+
+
 
 </menu>

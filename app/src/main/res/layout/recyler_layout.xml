@@ -5,31 +5,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:layout_margin="15dp"
     android:orientation="horizontal"
+    android:background="@drawable/linear"
     >
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-
     android:layout_marginLeft="30dp"
     android:layout_gravity="center"
     >
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:id="@+id/imageViewRecycler"
-        android:layout_width="141dp"
-        android:layout_height="114dp"
-       />
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginbtns"
+        android:layout_width="122dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/orderbtn"
-        android:layout_gravity="center"
-       />
+        android:layout_margin="10dp"
+        android:background="@drawable/buttonorange"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="128dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="5dp"
+            android:text="Click To Order"
+            android:textAlignment="center"
+            android:textColor="#D8CFCD"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
 
     <LinearLayout
@@ -46,7 +68,7 @@
             android:id="@+id/priceTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#CF9D08"
+            android:textColor="#E65A2E"
             android:textAlignment="center"
             android:text="200 RS"
             android:textSize="20sp"
@@ -59,7 +81,7 @@
             android:id="@+id/detailsTvs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#CF9D08"
+            android:textColor="#E65A2E"
             android:textAlignment="center"
             android:text="Chicken Wings"
             android:textSize="20sp"
@@ -71,7 +93,7 @@
             android:id="@+id/quantityTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#CF9D08"
+            android:textColor="#E65A2E"
             android:textAlignment="center"
             android:text="200 Kg Available"
             android:textSize="20sp"

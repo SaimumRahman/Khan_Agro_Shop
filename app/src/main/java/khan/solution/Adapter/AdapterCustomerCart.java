@@ -1,6 +1,9 @@
 package khan.solution.Adapter;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -17,8 +20,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
+import io.paperdb.Paper;
 import khan.solution.Model.Cart;
 import khan.solution.Model.DishPost;
+import khan.solution.Model.Prevelent;
 import khan.solution.databinding.RecylerLayoutBinding;
 
 public class AdapterCustomerCart extends RecyclerView.Adapter<AdapterCustomerCart.ViewHolder> {
@@ -39,6 +44,7 @@ public class AdapterCustomerCart extends RecyclerView.Adapter<AdapterCustomerCar
         return new AdapterCustomerCart.ViewHolder(binding);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onBindViewHolder(@NonNull AdapterCustomerCart.ViewHolder holder, int position) {
 
@@ -49,14 +55,32 @@ public class AdapterCustomerCart extends RecyclerView.Adapter<AdapterCustomerCar
         holder.binding.quantityTv.setText(cart.getQuantity());
 
         holder.itemView.setOnClickListener(v ->{
-            final FirebaseAuth auth=FirebaseAuth.getInstance();
-            String user=auth.getCurrentUser().getUid();
-            final FirebaseDatabase database=FirebaseDatabase.getInstance();
-            final DatabaseReference databaseReference=database.getReference("Cart");
 
-            databaseReference.child(user).child(cart.getCart_id()).removeValue().
-                    addOnCompleteListener(task ->
-                            Toast.makeText(context, "Product removed", Toast.LENGTH_SHORT).show());
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which){
+                        case DialogInterface.BUTTON_POSITIVE:
+                            final FirebaseAuth auth=FirebaseAuth.getInstance();
+                            String user= auth.getCurrentUser().getUid();
+                            final FirebaseDatabase database=FirebaseDatabase.getInstance();
+                            final DatabaseReference databaseReference=database.getReference("Cart");
+
+                            databaseReference.child(user).child(cart.getCart_id()).removeValue().
+                                    addOnCompleteListener(task ->
+                                            Toast.makeText(context, "Product removed", Toast.LENGTH_SHORT).show());
+                            break;
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+                            //No button clicked
+                            break;
+                    }
+                }
+            };
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setMessage("Do you Want to remove this from CART?").setPositiveButton("Yes", dialogClickListener)
+                    .setNegativeButton("No", dialogClickListener).show();
+
         });
 
 

@@ -98,11 +98,11 @@ public class AdapterCustomerHome extends RecyclerView.Adapter<AdapterCustomerHom
 
     private void saveData(DishPost dishPost) {
 
-        Paper.init(context);
-        String user = Paper.book().read(Prevelent.userid);
+       final FirebaseAuth auth=FirebaseAuth.getInstance();
+       String user= auth.getCurrentUser().getUid();
         String uniqueId = UUID.randomUUID().toString();
         final FirebaseDatabase database=FirebaseDatabase.getInstance();
-        final DatabaseReference databaseReference=database.getReference("Cart");
+        final DatabaseReference databaseReference=database.getReference("Cart").child(user);
 
         HashMap<String,Object> cartHash=new HashMap<>();
         cartHash.put("Price", dishPost.getDish_Price());
@@ -112,7 +112,7 @@ public class AdapterCustomerHome extends RecyclerView.Adapter<AdapterCustomerHom
         cartHash.put("cart_id",uniqueId);
         cartHash.put("Dish_Post_Id",dishPost.getPost_Id());
 
-        databaseReference.child(user).child(uniqueId).updateChildren(cartHash).addOnCompleteListener(task -> {
+        databaseReference.child(uniqueId).updateChildren(cartHash).addOnCompleteListener(task -> {
             Toast.makeText(context, "Added To CART", Toast.LENGTH_SHORT).show();
         }).addOnFailureListener(e -> {
             Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();

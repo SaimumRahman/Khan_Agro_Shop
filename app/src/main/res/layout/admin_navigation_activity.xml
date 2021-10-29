@@ -6,22 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.AdminNavigationActivity"
-    android:background="@drawable/homenavigationback"
+    android:background="@drawable/backnav"
     >
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/logoutadmin"
+    android:background="@color/white"
+    android:id="@+id/log"
+    android:layout_margin="5dp"
+    />
+
 
     <FrameLayout
         android:id="@+id/fragment_container_admin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/admin_bottom_navigation"/>
+        android:layout_above="@id/admin_bottom_navigation"
+        android:layout_below="@+id/log" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/admin_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?android:attr/windowBackground"
-        android:backgroundTint="@color/black"
+        android:background="#F84B3F"
+        android:backgroundTint="#F3B807"
         app:menu="@menu/admin_menu" />
 
 

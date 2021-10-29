@@ -1,11 +1,15 @@
 package khan.solution.Activities;
 
+import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
+import android.util.Patterns;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
@@ -27,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private LoginActivityBinding binding;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,93 +39,61 @@ public class LoginActivity extends AppCompatActivity {
         binding = LoginActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        database=FirebaseDatabase.getInstance();
-        databaseReference=database.getReference("Customer");
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Customer");
+        auth=FirebaseAuth.getInstance();
 
-        Paper.init(LoginActivity.this);
+        binding.registerTv.setOnClickListener(v ->{
+            startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+            finish();
+        });
 
         binding.loginbtns.setOnClickListener(v ->{
 
-            databaseReference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                    if (snapshot.exists()){
+            if (!TextUtils.isEmpty(binding.userAuthEdt.getText().toString())
+            ){
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
                         for (DataSnapshot snapshot1:snapshot.getChildren()){
                             Customer customer=snapshot1.getValue(Customer.class);
-                            String email=customer.getUser_details();
+                            if (binding.userAuthEdt.getText().toString().equals(customer.getUser_details())){
 
-                            if (email.equals(binding.userAuthEdt.getText().toString())){
-
-                                if (binding.rememberCheck.isChecked()){
-                                    Paper.book().write(Prevelent.userdetailskey,email);
-                                    Paper.book().write(Prevelent.userid,customer.getUser_id());
-                                }
-
-                                    startActivity(new Intent(LoginActivity.this,CustomerNavigationActivity.class));
-                                    finish();
-
-                            }
-                            else {
-                                Toast.makeText(LoginActivity.this, "Please Register", Toast.LENGTH_SHORT).show();
-
+                                startActivity(new Intent(LoginActivity.this, CustomerNavigationActivity.class));
+                                finish();
                             }
                         }
                     }
 
-                }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-        });
-
-
-        binding.registerTv.setOnClickListener(v ->{
-
-            startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
-            finish();
+                    }
+                });
+            }
+            else {
+                Toast.makeText(LoginActivity.this,"Please Enter Details Correctly",Toast.LENGTH_SHORT).show();
+            }
 
         });
-
 
     }
-
-//    private void rememberme(){
-//        binding.rememberCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//               if (compoundButton.isChecked()){
-//                   SharedPreferences sharedPreferences=getSharedPreferences("checkbox",MODE_PRIVATE);
-//                   SharedPreferences.Editor editor=sharedPreferences.edit();
-//                   editor.putString("remember","true");
-//                   editor.apply();
-//               }
-//               else if (!compoundButton.isChecked()){
-//                   SharedPreferences sharedPreferences=getSharedPreferences("checkbox",MODE_PRIVATE);
-//                   SharedPreferences.Editor editor=sharedPreferences.edit();
-//                   editor.putString("remember","false");
-//                   editor.apply();
-//               }
-//
-//            }
-//        });
-
 
     @Override
     protected void onStart() {
         super.onStart();
-//        SharedPreferences sharedPreferences=getSharedPreferences("checkbox",MODE_PRIVATE);
-//        String checked=sharedPreferences.getString("remember","");
-//
-//        if (checked.equals("true")){
-//            startActivity(new Intent(LoginActivity.this,CustomerNavigationActivity.class));
-//        }else if (checked.equals("false")){
-//            Toast.makeText(LoginActivity.this, "Please login", Toast.LENGTH_SHORT).show();
-//
-//        }
+        
+        FirebaseUser user =FirebaseAuth.getInstance().getCurrentUser();
+        
+        if (user!=null){
+            
+            startActivity(new Intent(LoginActivity.this,CustomerNavigationActivity.class));
+            finish();
+            
+        }
+        else{
+            Toast.makeText(this, "Please Login or Register", Toast.LENGTH_SHORT).show();
+        }
+        
     }
 }

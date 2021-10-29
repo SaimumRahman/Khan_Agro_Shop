@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,11 +19,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
+import io.paperdb.Paper;
 import khan.solution.Activities.AdminOrderDetailsActivity;
 import khan.solution.Model.Cart;
 import khan.solution.Model.PayBill;
+import khan.solution.Model.Prevelent;
+import khan.solution.Model.Products;
 import khan.solution.MyFirebaseInstanceIDService;
 import khan.solution.databinding.NotificationLayoutBinding;
 import khan.solution.databinding.RecylerLayoutBinding;
@@ -39,6 +46,7 @@ public class AdapterPayBill extends RecyclerView.Adapter<AdapterPayBill.ViewHold
     @NonNull
     @Override
     public AdapterPayBill.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         NotificationLayoutBinding binding=NotificationLayoutBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
 
         return new AdapterPayBill.ViewHolder(binding);
@@ -54,8 +62,13 @@ public class AdapterPayBill extends RecyclerView.Adapter<AdapterPayBill.ViewHold
         holder.binding.addressOrdernot.setText(payBill.getAddress());
         holder.binding.pricetotalOrdernot.setText(payBill.getTotal_Bill());
 
+        holder.binding.ordershipped.setOnClickListener(v ->{
+            shiipingOrder(payBill);
+        });
+
         holder.itemView.setOnClickListener(v ->{
             Intent intent=new Intent(context, AdminOrderDetailsActivity.class);
+            intent.putExtra("user",payBill.getCustomer_ID());
             context.startActivity(intent);
         });
 
@@ -75,5 +88,74 @@ public class AdapterPayBill extends RecyclerView.Adapter<AdapterPayBill.ViewHold
             binding=itemView;
         }
     }
+
+    private void shiipingOrder(PayBill payBill) {
+
+
+        String user=payBill.getCustomer_ID();
+
+        final FirebaseDatabase db=FirebaseDatabase.getInstance();
+        final DatabaseReference ref=db.getReference("Products").child(user);
+        final DatabaseReference addref=db.getReference("Shipped").child(user);
+        final DatabaseReference removeRef=db.getReference("Orders").child(user);
+        final DatabaseReference addShippedOrder=db.getReference("Shipped_Orders").child(user);
+        final String shippingId= UUID.randomUUID().toString();
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                       for (DataSnapshot snapshot1:snapshot.getChildren()){
+
+                           Products p=snapshot1.getValue(Products.class);
+
+                           final HashMap<String,Object> addShipHas=new HashMap<>();
+                           addShipHas.put("cart_id",p.getCart_id());
+                           addShipHas.put("details",p.getDetails());
+                           addShipHas.put("imageuri",p.getImageuri());
+                           addShipHas.put("price",p.getPrice());
+                           addShipHas.put("quantity",p.getQuantity());
+
+                           addref.child(shippingId).updateChildren(addShipHas)
+                                   .addOnCompleteListener(new OnCompleteListener<Void>() {
+                               @Override
+                               public void onComplete(@NonNull Task<Void> task) {
+                                   Toast.makeText(context, "Order Has been Shipped", Toast.LENGTH_SHORT).show();
+
+                                   //Address,Customer_ID,Email,Name,Order_ID,Phone,Total_Bill;
+                                   final HashMap<String,Object> addordership=new HashMap<>();
+                                   addordership.put("Address",payBill.getAddress());
+                                   addordership.put("Customer_ID",payBill.getCustomer_ID());
+                                   addordership.put("Email",payBill.getEmail());
+                                   addordership.put("Name",payBill.getName());
+                                   addordership.put("Order_ID",payBill.getOrder_ID());
+                                   addordership.put("Total_Bill",payBill.getTotal_Bill());
+
+                                   addShippedOrder.child(payBill.getOrder_ID()).updateChildren(addordership).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                       @Override
+                                       public void onComplete(@NonNull Task<Void> task) {
+
+                                       }
+                                   });
+
+                                   removeRef.removeValue();
+
+                               }
+                           });
+
+                       }
+                } else {
+                    Toast.makeText(context, "No Data Exists", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
 }
 

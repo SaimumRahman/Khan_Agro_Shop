@@ -3,6 +3,7 @@ package khan.solution.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -43,10 +44,9 @@ public class CustomerOrderActivity extends AppCompatActivity {
         binding=ActivityCustomerOrderBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Paper.init(this);
 
         auth=FirebaseAuth.getInstance();
-        user=Paper.book().read(Prevelent.userid);
+        user=auth.getCurrentUser().getUid();
 
          Order_ID = UUID.randomUUID().toString();
 
@@ -81,6 +81,26 @@ public class CustomerOrderActivity extends AppCompatActivity {
 
         binding.paybillbtn.setOnClickListener(v ->{
             UpdateOrder();
+            startActivity(new Intent(CustomerOrderActivity.this,CustomerNavigationActivity.class));
+            finish();
+        });
+
+        binding.razorpaybtn.setOnClickListener(v ->{
+            if (!TextUtils.isEmpty(binding.NameEdtOrder.getText()) &&
+                    !TextUtils.isEmpty(binding.emailEdtOrder.getText()) &&
+                    Patterns.EMAIL_ADDRESS.matcher(binding.emailEdtOrder.getText()).matches() &&
+                    !TextUtils.isEmpty(binding.phoneEdtOrder.getText()) &&
+                    !TextUtils.isEmpty(binding.edtAddressOrder.getText())
+            ) {
+                Intent intent = new Intent(CustomerOrderActivity.this, RazorPayActivity.class);
+                intent.putExtra("Order_ID", Order_ID);
+                intent.putExtra("Name", binding.NameEdtOrder.getText().toString());
+                intent.putExtra("Email", binding.emailEdtOrder.getText().toString());
+                intent.putExtra("Phone", binding.phoneEdtOrder.getText().toString());
+                intent.putExtra("Address", binding.edtAddressOrder.getText().toString());
+                intent.putExtra("Total_Bill", binding.totalpricecustomer2.getText().toString());
+                startActivity(intent);
+           }
         });
 
 

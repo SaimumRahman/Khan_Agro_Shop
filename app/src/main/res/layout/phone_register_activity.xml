@@ -6,57 +6,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.PhoneRegisterActivity"
-    android:background="@drawable/backphnreg"
+    android:background="@drawable/register"
     >
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     >
-<ImageView
-    android:layout_margin="10dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/topreg"
-    android:id="@+id/im1"
-    android:layout_centerHorizontal="true"
-    />
-    <com.hbb20.CountryCodePicker
-        android:layout_margin="10dp"
+
+    <ImageView
+        android:id="@+id/im1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/topreg" />
+
+    <com.hbb20.CountryCodePicker
         android:id="@+id/countryCodePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:ccpDialog_textColor="#D3E610"
-        app:ccp_textSize="25sp"
         android:layout_below="@+id/im1"
-      />
-    <EditText
-        android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:ccpDialog_textColor="#EF4915"
+        app:ccp_textSize="25sp" />
+
+    <EditText
         android:id="@+id/phoneNumberEdt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/countryCodePicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/edittextall"
         android:hint="Enter Phone Number"
         android:inputType="phone"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_below="@+id/countryCodePicker"
-        />
+        android:textColor="#EF4915"
+        android:textColorHint="#EF4915"
+        android:textSize="20sp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_margin="10dp"
         android:id="@+id/submitBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="152dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/phoneNumberEdt"
         android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content"
-        android:background="@drawable/buttonallfinal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btnlogins"
         android:text="Submit Number"
         android:textAlignment="center"
-        android:textColor="#D60B0B"
-        android:layout_below="@+id/phoneNumberEdt"
-        />
+        android:textColor="#D60B0B" />
     <ImageView
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
@@ -68,32 +81,37 @@
         />
 
     <EditText
-        android:layout_margin="10dp"
-        android:layout_centerHorizontal="true"
         android:id="@+id/verifyCodeEdt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/im2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/edittextall"
         android:hint="VerificationCodeEdt"
         android:inputType="number"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="#D3E610"
-        android:layout_below="@+id/im2"
-      />
+        android:textColor="#EF4915"
+        android:textColorHint="#EF4915"
+        android:textSize="20sp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
         android:id="@+id/verifyBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/buttonallfinal"
+        android:layout_width="158dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/verifyCodeEdt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btnlogins"
         android:text="Verify Code"
         android:textAlignment="center"
-        android:textColor="#D60B0B"
-        android:layout_below="@+id/verifyCodeEdt"
-      />
+        android:textColor="#D60B0B" />
     <TextView
         android:id="@+id/resendCodeTv"
         android:layout_width="wrap_content"

@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +40,8 @@ public class CustomerCartFragment extends Fragment implements SwipeRefreshLayout
     private AdapterCustomerCart adapterCustomerCart;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private FirebaseAuth auth;
+    private String user;
 
     @Nullable
     @Override
@@ -47,7 +50,9 @@ public class CustomerCartFragment extends Fragment implements SwipeRefreshLayout
         getActivity().setTitle("Home");
 
         firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference("Cart");
+        auth=FirebaseAuth.getInstance();
+        user=auth.getCurrentUser().getUid();
+        databaseReference=firebaseDatabase.getReference("Cart").child(user);
 
         binding.customercartrecycler.setHasFixedSize(true);
         binding.customercartrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -97,16 +102,16 @@ public class CustomerCartFragment extends Fragment implements SwipeRefreshLayout
                 if (snapshot.exists()){
 
                     for (DataSnapshot snapshot1:snapshot.getChildren()){
-                        for (DataSnapshot snapshot2:snapshot1.getChildren()){
-                            Cart cart=snapshot2.getValue(Cart.class);
+
+                            Cart cart=snapshot1.getValue(Cart.class);
                             cartList.add(cart);
-                        }
+
 //                        Cart cart=snapshot1.getValue(Cart.class);
 //                        cartList.add(cart);
                     }
                     adapterCustomerCart = new AdapterCustomerCart(getContext(), cartList);
                     binding.customercartrecycler.setAdapter(adapterCustomerCart);
-
+                    adapterCustomerCart.notifyDataSetChanged();
                     binding.customerCartswipe.setRefreshing(false);
 
                 }

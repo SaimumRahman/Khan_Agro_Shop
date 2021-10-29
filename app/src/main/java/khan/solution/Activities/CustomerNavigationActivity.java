@@ -11,8 +11,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import khan.solution.Fragments.CustomerCartFragment;
 import khan.solution.Fragments.CustomerChickenFragment;
-import khan.solution.Fragments.CustomerLogout;
+import khan.solution.Fragments.CustomerShippingFragment;
 import khan.solution.Fragments.CustomerMuttonFragment;
+import khan.solution.Fragments.LogoutFragment;
 import khan.solution.R;
 import khan.solution.databinding.ActivityCustomerNavigationBinding;
 
@@ -28,6 +29,10 @@ public class CustomerNavigationActivity extends AppCompatActivity
         setContentView(binding.getRoot());
 
         binding.customerBottomNavigation.setOnNavigationItemSelectedListener(this);
+
+        Fragment fr=new CustomerChickenFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_customer, fr).commit();
+
     }
 
     @Override
@@ -48,8 +53,11 @@ public class CustomerNavigationActivity extends AppCompatActivity
                     fragment=new CustomerCartFragment();
                     break;
 
-                case R.id.logout_customer:
-                    fragment=new CustomerLogout();
+                case R.id.shipped_customer:
+                    fragment=new CustomerShippingFragment();
+                    break;
+                case R.id.logoutcustomer:
+                    fragment=new LogoutFragment();
                     break;
 
             }

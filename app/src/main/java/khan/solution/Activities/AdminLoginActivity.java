@@ -36,7 +36,8 @@ public class AdminLoginActivity extends AppCompatActivity {
                 && password.equals(binding.adminpasswordEdt.getText().toString())
             ){
                 startActivity(new Intent(AdminLoginActivity.this,AdminNavigationActivity.class));
-                finish();
+
+
                 Toast.makeText(getApplicationContext(),"Logged IN",Toast.LENGTH_SHORT).show();
             }
             else {

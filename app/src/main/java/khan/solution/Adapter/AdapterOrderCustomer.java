@@ -1,6 +1,7 @@
 package khan.solution.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import khan.solution.Activities.AdminOrderDetailsActivity;
 import khan.solution.Model.PayBill;
 import khan.solution.databinding.NotificationLayoutBinding;
 
@@ -25,6 +27,7 @@ public class AdapterOrderCustomer extends RecyclerView.Adapter<AdapterOrderCusto
     @NonNull
     @Override
     public AdapterOrderCustomer.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         NotificationLayoutBinding binding=NotificationLayoutBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
 
         return new AdapterOrderCustomer.ViewHolder(binding);
@@ -39,6 +42,14 @@ public class AdapterOrderCustomer extends RecyclerView.Adapter<AdapterOrderCusto
         holder.binding.phnordernot.setText(payBill.getPhone());
         holder.binding.addressOrdernot.setText(payBill.getAddress());
         holder.binding.pricetotalOrdernot.setText(payBill.getTotal_Bill());
+
+        holder.itemView.setOnClickListener(v ->{
+
+           Intent passIntent=new Intent(context,AdminOrderDetailsActivity.class);
+           passIntent.putExtra("user",payBill.getCustomer_ID());
+           context.startActivity(passIntent);
+
+        });
 
 
     }

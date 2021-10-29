@@ -26,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import io.paperdb.Paper;
+import khan.solution.Model.Prevelent;
 import khan.solution.databinding.PhoneRegisterActivityBinding;
 
 public class PhoneRegisterActivity extends AppCompatActivity {
@@ -71,7 +73,10 @@ public class PhoneRegisterActivity extends AppCompatActivity {
         callbacks=new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                signInnWithPhoneAuthCredential(phoneAuthCredential);
+
+                    signInnWithPhoneAuthCredential(phoneAuthCredential);
+
+
             }
 
             @Override
@@ -152,6 +157,8 @@ public class PhoneRegisterActivity extends AppCompatActivity {
         dialog.setMessage("Verifying Phone Number");
         dialog.show();
 
+
+
         PhoneAuthOptions options= PhoneAuthOptions.newBuilder(auth)
                 .setPhoneNumber(number)
                 .setTimeout(60L, TimeUnit.SECONDS)
@@ -209,6 +216,7 @@ public class PhoneRegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                       if (task.isSuccessful()){
+
                           Toast.makeText(PhoneRegisterActivity.this,"Registered",Toast.LENGTH_SHORT).show();
                           startActivity(new Intent(PhoneRegisterActivity.this,LoginActivity.class));
                       }

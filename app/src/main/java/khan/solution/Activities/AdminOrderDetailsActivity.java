@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +31,7 @@ public class AdminOrderDetailsActivity extends AppCompatActivity {
     private AdapterDetailsOrder adapterDetailsOrder;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
     private String user;
 
     @Override
@@ -38,9 +40,7 @@ public class AdminOrderDetailsActivity extends AppCompatActivity {
         binding=ActivityAdminOrderDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Paper.init(this);
-       user= Paper.book().read(Prevelent.userid);
-
+        user=getIntent().getStringExtra("user");
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference("Products").child(user);
 

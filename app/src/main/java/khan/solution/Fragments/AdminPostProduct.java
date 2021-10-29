@@ -54,10 +54,9 @@ public class AdminPostProduct extends Fragment {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private String postId,saveCurrentDateMs,saveCurrentTimeMs;
-    private Uri imageuri,mCropimageuri,finalUri;
+    private Uri imageuri,mCropimageuri;
     private  Context context;
     private StorageReference storageReference,reference;
-
 
 
     public AdminPostProduct(Context context) {
@@ -72,7 +71,6 @@ public class AdminPostProduct extends Fragment {
         context=getContext().getApplicationContext();
 
         firebaseDatabase=FirebaseDatabase.getInstance();
-
 
         storageReference=FirebaseStorage.getInstance().getReference("Dish_Image");
 
@@ -106,14 +104,11 @@ public class AdminPostProduct extends Fragment {
             upload();
         });
 
-
-
         return binding.getRoot();
+
     }
 
     private void upload(){
-
-
 
         if (TextUtils.isEmpty(binding.priceEdt.getText().toString())
             && TextUtils.isEmpty(binding.detailsEdt.getText().toString())
@@ -137,14 +132,11 @@ public class AdminPostProduct extends Fragment {
             postHash.put("Dish_Date", saveCurrentDateMs);
             postHash.put("Dish_Time", saveCurrentTimeMs);
 
-            databaseReference.child(postId).updateChildren(postHash).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(context, "Dish Added Successfully", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(context, "Dish NOT Added Successfully", Toast.LENGTH_SHORT).show();
-                    }
+            databaseReference.child(postId).updateChildren(postHash).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(context, "Dish Added Successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Dish NOT Added Successfully", Toast.LENGTH_SHORT).show();
                 }
             });
         }
