@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -32,16 +33,21 @@ public class AdminLoginActivity extends AppCompatActivity {
         userandpass();
 
         binding.adminLoginBtn.setOnClickListener(v ->{
-            if(username.equals(binding.adminUserNameEdt.getText().toString())
-                && password.equals(binding.adminpasswordEdt.getText().toString())
-            ){
-                startActivity(new Intent(AdminLoginActivity.this,AdminNavigationActivity.class));
-
-
-                Toast.makeText(getApplicationContext(),"Logged IN",Toast.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(binding.adminpasswordEdt.getText()) && TextUtils.isEmpty(binding.adminUserNameEdt.getText())){
+                Toast.makeText(AdminLoginActivity.this, "Please Enter Password and Username", Toast.LENGTH_SHORT).show();
             }
-            else {
-                Toast.makeText(getApplicationContext(),"INCORRECT",Toast.LENGTH_SHORT).show();
+            else{
+                if(username.equals(binding.adminUserNameEdt.getText().toString())
+                        && password.equals(binding.adminpasswordEdt.getText().toString())
+                ){
+                    startActivity(new Intent(AdminLoginActivity.this,AdminNavigationActivity.class));
+
+
+                    Toast.makeText(getApplicationContext(),"Logged IN",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"INCORRECT",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

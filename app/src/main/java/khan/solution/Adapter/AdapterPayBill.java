@@ -9,10 +9,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,15 +21,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-import io.paperdb.Paper;
 import khan.solution.Activities.AdminOrderDetailsActivity;
-import khan.solution.Model.Cart;
 import khan.solution.Model.PayBill;
-import khan.solution.Model.Prevelent;
 import khan.solution.Model.Products;
-import khan.solution.MyFirebaseInstanceIDService;
 import khan.solution.databinding.NotificationLayoutBinding;
-import khan.solution.databinding.RecylerLayoutBinding;
 
 public class AdapterPayBill extends RecyclerView.Adapter<AdapterPayBill.ViewHolder> {
 
