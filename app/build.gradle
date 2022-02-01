@@ -4,13 +4,21 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\saimu\\netwo.jks')
+            storePassword 'saimum'
+            keyAlias 'key0'
+            keyPassword 'saimum'
+        }
+    }
     compileSdk 31
 
     defaultConfig {
         applicationId "khan.solution"
         minSdk 21
         targetSdk 30
-        versionCode 4
+        versionCode 5
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -20,6 +28,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -78,6 +87,8 @@ dependencies {
     implementation group: 'com.razorpay', name: 'checkout', version: '1.6.12'
     // https://mvnrepository.com/artifact/com.razorpay/checkout
     implementation group: 'com.razorpay', name: 'checkout', version: '1.6.7'
+
+    implementation 'com.google.android.gms:play-services-tagmanager:18.0.1'
 
 
 
